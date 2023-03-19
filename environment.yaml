@@ -1,0 +1,8 @@
+name: book
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - conda-forge::jupyter-book
+  - matplotlib
+  - conda-forge::numpy
