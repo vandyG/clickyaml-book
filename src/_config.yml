@@ -3,7 +3,7 @@
 
 title: "ClickYaml: A Python Odyssey"
 author: "Vandit Goel"
-logo: clickYaml.png
+logo: "../data/clickYaml.png"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
