@@ -1,8 +1,9 @@
 name: book
 channels:
-  - conda-forge
   - defaults
+  - conda-forge
 dependencies:
   - conda-forge::jupyter-book
-  - matplotlib
-  - conda-forge::numpy
+  - pip
+  - pip:
+    - ghp-import2
