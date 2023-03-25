@@ -17,5 +17,7 @@ development.
 
 So if you are looking for the *best approach* **I am afraid I can't provide you that**.
 
+.. image:: 2001.jpg
+
 .. _clickYaml: https://github.com/vandyG/clickyaml
 .. _pypi: https://pypi.org/
