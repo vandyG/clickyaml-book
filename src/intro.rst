@@ -15,5 +15,7 @@ claims to provide the best solution; instead it paints the picture of the
 dev's journey and all the effort that went into the project during the 
 development.
 
+.. image:: 2001.jpg
+
 .. _clickYaml: https://github.com/vandyG/clickyaml
 .. _pypi: https://pypi.org/
