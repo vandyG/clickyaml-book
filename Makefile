@@ -41,7 +41,7 @@ lint: lint/flake8 lint/black ## check style
 
 build: clean-build ## Build the book and create html, push to gh-pages branch
 	jupyter-book build --path-output docs/ src   
-	ghp-import -n docs/_build/html     
+	ghp-import -n -p docs/_build/html     
 
 requirements: ## Install project development dependencies (requires conda)
 	conda env update --prefix ./env --file environment.yaml  --prune    
