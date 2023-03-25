@@ -15,8 +15,6 @@ claims to provide the best solution; instead it paints the picture of the
 dev's journey and all the effort that went into the project during the 
 development.
 
-So if you are looking for the *best approach* **I am afraid I can't provide you that**.
-
 .. image:: 2001.jpg
 
 .. _clickYaml: https://github.com/vandyG/clickyaml
