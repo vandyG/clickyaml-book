@@ -4,4 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: book/book
+  - file: package/overview
+  - file: book/book
+    sections:
+    - file: book/setup
