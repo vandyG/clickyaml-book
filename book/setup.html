@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steps &#8212; clickYaml</title>
+    <title>Setting up the book &#8212; clickYaml</title>
   
   
   
@@ -59,9 +59,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/steps';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Creating this book" href="book.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,10 +153,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../package/overview.html">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="book.html">Creating this book</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up the book</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="book.html">Creating this book</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Setting up the book</a></li>
 </ul>
 </li>
 </ul>
@@ -229,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/vandyG/clickyaml-book/issues/new?title=Issue%20on%20page%20%2Fbook/steps.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/vandyG/clickyaml-book/issues/new?title=Issue%20on%20page%20%2Fbook/setup.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -259,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/book/steps.rst" target="_blank"
+      <li><a href="../_sources/book/setup.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -328,7 +329,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -339,11 +342,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Steps</h1>
+    <h1>Setting up the book</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-project-directory">Setting up the project Directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">Setting up the environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-environment-yaml-file-in-the-project-root">Create <cite>environment.yaml</cite> file in the project root.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-conda-environment">Create the conda environment</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -353,13 +369,73 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="steps">
-<h1>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h1>
-<ol class="arabic simple">
-<li><p>Install conda</p></li>
-<li><p>jupyter-book</p></li>
-<li><p>setup makefile</p></li>
-</ol>
+  <div class="section" id="setting-up-the-book">
+<h1>Setting up the book<a class="headerlink" href="#setting-up-the-book" title="Permalink to this headline">#</a></h1>
+<p>This step includes setting up the development environment and directory structure.
+For setting up the environment I used <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> and the book is created using <a class="reference external" href="https://github.com/vandyG/clickyaml">jupyter-book</a>
+package.</p>
+<div class="section" id="setting-up-the-project-directory">
+<h2>Setting up the project Directory<a class="headerlink" href="#setting-up-the-project-directory" title="Permalink to this headline">#</a></h2>
+<p>Run the following command in the terminal and answer the prompts.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book create mynewbook/ --cookiecutter
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This step requires <a class="reference external" href="https://github.com/vandyG/clickyaml">jupyter-book</a> and <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">cookiecutter</a> packages.
+For more information and installation instructions refer to the
+respective documentations</p>
+</div>
+</div>
+<div class="section" id="setting-up-the-environment">
+<h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
+<p>The development environment was set up using <cite>conda</cite>.</p>
+<div class="section" id="create-environment-yaml-file-in-the-project-root">
+<h3>Create <cite>environment.yaml</cite> file in the project root.<a class="headerlink" href="#create-environment-yaml-file-in-the-project-root" title="Permalink to this headline">#</a></h3>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">environment.yaml</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">book</span><span class="w"></span>
+<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
+<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge::jupyter-book</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pip</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghp-import2</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>This will create a conda environment with <cite>name</cite> as <strong>book</strong>. It will also install the mentioned
+dependencies. The dependencies can be listed with explicit channel name so as to install from
+a specific channel instead of letting conda decide. In this case <cite>jupyter-book</cite> will be installed
+from the <cite>conda-forge</cite> channel.</p>
+<p>Pip dependencies can also be listed to install packages from pip instead of conda. In this case
+<cite>ghp-import2</cite> was supposed to be installed via pip hence, is listed under pip dependencies.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually">Creating an environment file manually</a> for more information
+on creating the environment.yaml file.</p>
+</div>
+</div>
+<div class="section" id="create-the-conda-environment">
+<h3>Create the conda environment<a class="headerlink" href="#create-the-conda-environment" title="Permalink to this headline">#</a></h3>
+<p>To create the conda environment run the following command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yaml
+</pre></div>
+</div>
+<p>In case the dependencies need to be updated, make the changes in the
+environment.yaml file and run the following command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda env update --prefix ./env --file environment.yaml  --prune
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file">Creating an environment from an environment.yml file</a> and
+<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#updating-an-environment">Updating an environment</a></p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -390,12 +466,40 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="book.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating this book</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-project-directory">Setting up the project Directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">Setting up the environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-environment-yaml-file-in-the-project-root">Create <cite>environment.yaml</cite> file in the project root.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-conda-environment">Create the conda environment</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
