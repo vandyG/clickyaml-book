@@ -10,7 +10,7 @@ Here is a list of tools that were used while working on this project:
 
 ================    ======================
 Operating System    |Win| + |Ubu|
-
+================    ======================
 
 .. |Win| image:: data/win.eps
    :width: 45%
