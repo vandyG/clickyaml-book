@@ -12,8 +12,8 @@ Here is a list of tools that were used while working on this project:
 Operating System    |Win| + |Ubu|
 ================    ======================
 
-.. |Win| figure:: data/win.svg
+.. figure:: data/win.svg
    :width: 5%
 
-.. |Ubu| figure:: data/ubu.svg
+.. figure:: data/ubu.svg
    :width: 5%
