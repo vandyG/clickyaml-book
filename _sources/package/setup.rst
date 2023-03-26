@@ -13,7 +13,7 @@ Operating System    |Win| + |Ubu|
 ================    ======================
 
 .. |Win| image:: data/win.eps
-   :width: 45%
+   :width: 10%
 
 .. |Ubu| image:: data/ubu.svg
-   :width: 45%
+   :width: 10%
