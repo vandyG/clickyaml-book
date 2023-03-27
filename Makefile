@@ -39,6 +39,10 @@ lint/black: ## check style with black
 
 lint: lint/flake8 lint/black ## check style
 
+book: clean-build ## Build the book
+	jupyter-book build --path-output docs/ src   
+
+
 build: clean-build ## Build the book and create html, push to gh-pages branch
 	jupyter-book build --path-output docs/ src   
 	ghp-import -n -p docs/_build/html     
