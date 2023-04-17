@@ -1,6 +1,15 @@
 .PHONY: clean clean-build clean-pyc clean-test coverage dist docs help install lint lint/flake8 lint/black
 .DEFAULT_GOAL := help
 
+define BROWSER_PYSCRIPT
+import os, webbrowser, sys
+
+from urllib.request import pathname2url
+
+webbrowser.open("file://" + pathname2url(os.path.abspath(sys.argv[1])))
+endef
+export BROWSER_PYSCRIPT
+
 define PRINT_HELP_PYSCRIPT
 import re, sys
 
@@ -11,6 +20,8 @@ for line in sys.stdin:
 		print("%-20s %s" % (target, help))
 endef
 export PRINT_HELP_PYSCRIPT
+
+BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
@@ -41,6 +52,7 @@ lint: lint/flake8 lint/black ## check style
 
 book: clean-build ## Build the book
 	jupyter-book build --path-output docs/ src   
+	# $(BROWSER) docs/_build/html/index.html
 
 
 build: clean-build ## Build the book and create html, push to gh-pages branch
