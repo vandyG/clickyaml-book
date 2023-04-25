@@ -101,7 +101,7 @@ Here is an example:
    use_pytest [n]: y                         # sets up project to be used with pytest, for unit testing.
    use_black [n]: y                          # for code formatting
    use_pypi_deployment_with_travis [y]: n    # I will be using GitHub actions for deployment.
-   add_pyup_badge [n]: y                     # adds a badge in readme file
+   add_pyup_badge [n]: n                     # adds a badge in readme file
    Select command_line_interface:
    1 - Click
    2 - Argparse
