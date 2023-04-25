@@ -83,4 +83,4 @@ To create a new repo run the ``gh repo create`` interactive command. And answer 
     ✓ Added remote https://github.com/vandyG/open_pod_bay_doors.git
     ? Would you like to push commits from the current branch to "origin"? Yes
 
-    
+Now we are ready to push the changes to remote.
