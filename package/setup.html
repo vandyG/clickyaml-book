@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'package/setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating this book" href="../book/book.html" />
+    <link rel="next" title="The Makefile" href="makefile.html" />
     <link rel="prev" title="Overview" href="overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -156,8 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Environment Setup</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../book/book.html">Creating this book</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Environment Setup</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">The Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_setup.html">Setting up Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Installing Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/book.html">Creating this book</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../book/setup.html">Setting up the book</a></li>
 </ul>
 </li>
@@ -331,7 +336,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -347,6 +354,27 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-conda">Setting up conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-conda-installer">Downloading conda installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-installer">Run the installer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-project-using-cookiecutter">Create project using <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cookiecutter-in-the-base-conda-environment">Install Cookiecutter in the base conda environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-from-the-template">Create a project from the template</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-and-directories">Files and directories</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -358,9 +386,11 @@ document.write(`
                   
   <div class="section" id="environment-setup">
 <h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">#</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>Since this is a book I’ll be covering every single step that went into or was related to this project.
-This chapter will cover the steps to set up a development environment. This project was developed this
-project on Windows Subsystem for Linux - Ubuntu so all the steps will correspond to that.</p>
+This chapter will cover the steps to set up a development environment. This project was developed on
+Windows Subsystem for Linux - Ubuntu so all the steps will correspond to that.</p>
 <p>Here is a list of tools that were used while working on this project:</p>
 <table class="table">
 <colgroup>
@@ -369,10 +399,177 @@ project on Windows Subsystem for Linux - Ubuntu so all the steps will correspond
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Operating System</p></td>
-<td><p><a class="reference internal" href="../_images/win.svg"><img alt="Win" src="../_images/win.svg" width="2%" /></a> + <a class="reference internal" href="../_images/ubu.svg"><img alt="Ubu" src="../_images/ubu.svg" width="2%" /></a></p></td>
+<td><p><a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10"><img alt="Windows" src="../_images/win.svg" width="5%" /></a> + <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10"><img alt="WSL-Ubuntu" src="../_images/ubu.svg" width="5%" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Text Editor</p></td>
+<td><p><a class="reference external" href="https://code.visualstudio.com/download"><img alt="Visual Studio Code" src="../_images/vscode.png" style="width: 5%;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Package Manager</p></td>
+<td><p><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html"><img alt="Conda" src="../_images/conda.png" style="width: 5%;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Version Control</p></td>
+<td><p><a class="reference external" href="https://git-scm.com/download/linux"><img alt="Git" src="../_images/git.png" style="width: 5%;" /></a> + <a class="reference external" href="https://github.com/"><img alt="GitHub" src="../_images/github.png" style="width: 5%;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Documentation</p></td>
+<td><p><a class="reference external" href="https://docs.readthedocs.io/en/stable/tutorial/index.html"><img alt="Read The Docs" src="../_images/rtd.png" style="width: 5%;" /></a> + <a class="reference external" href="https://www.sphinx-doc.org/en/master/"><img alt="Sphinx" src="../_images/sphinx.png" style="width: 5%;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Publishing</p></td>
+<td><p><a class="reference external" href="https://pypi.org/"><img alt="PyPi" src="../_images/pypi.png" style="width: 5%;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing</p></td>
+<td><p><a class="reference external" href="https://docs.pytest.org/en/7.2.x/"><img alt="PyTest" src="../_images/pytest.png" style="width: 5%;" /></a> + <a class="reference external" href="https://github.com/features/actions"><img alt="Github Actions" src="../_images/gaction.png" style="width: 5%;" /></a></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="setting-up-conda">
+<h2>Setting up conda<a class="headerlink" href="#setting-up-conda" title="Permalink to this headline">#</a></h2>
+<p>I choose to use <strong>conda</strong> instead of <strong>venv</strong> because it is easier to maintain the environments.
+I am usually working on multiple projects and each has it’s separate environment. With a simple
+<cite>conda env list</cite> I can list all the environments.</p>
+<p>This is different from dependency management as some packages that I need for development might
+not be required while packaging. For dependency management I am using the <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> with <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>.
+More on that later.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> is required during testing and development but it’s not a dependency for the package.
+The user need not have pytest to install the package and use it.</p>
+</dd>
+</dl>
+<div class="section" id="downloading-conda-installer">
+<h3>Downloading conda installer<a class="headerlink" href="#downloading-conda-installer" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>You can also download it manually from the same link.</p>
+</div>
+<div class="section" id="run-the-installer">
+<h3>Run the installer<a class="headerlink" href="#run-the-installer" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>bash Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>And follow the prompts.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/linux.html">Installing conda on linux</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="create-project-using-cookiecutter">
+<h2>Create project using <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code><a class="headerlink" href="#create-project-using-cookiecutter" title="Permalink to this headline">#</a></h2>
+<p>Cookiecutter creates projects from predefined templates. These templates include a defined directory structure,
+setup for setuptools, Makefile, README and more. For this project I am using <a class="reference external" href="https://github.com/audreyfeldroy/cookiecutter-pypackage">audreyfeldroy/cookiecutter-pypackage</a>
+template.</p>
+<div class="section" id="install-cookiecutter-in-the-base-conda-environment">
+<h3>Install Cookiecutter in the base conda environment<a class="headerlink" href="#install-cookiecutter-in-the-base-conda-environment" title="Permalink to this headline">#</a></h3>
+<p>As I use cookiecutter templates quite often I have it installed in the base environment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge cookiecutter
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-project-from-the-template">
+<h3>Create a project from the template<a class="headerlink" href="#create-a-project-from-the-template" title="Permalink to this headline">#</a></h3>
+<p>Once you have cookiecutter installed, run the following command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cookiecutter https://github.com/audreyfeldroy/cookiecutter-pypackage.git
+</pre></div>
+</div>
+<p>After running this command you’ll be presented with a series of prompts, answer them as per your requirements.
+Here is an example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>full_name <span class="o">[</span>Audrey Roy Greenfeld<span class="o">]</span>: HAL <span class="m">9000</span>
+email <span class="o">[</span>audreyr@example.com<span class="o">]</span>: hal9000@discovery.one
+github_username <span class="o">[</span>audreyr<span class="o">]</span>: hal9000
+project_name <span class="o">[</span>Python Boilerplate<span class="o">]</span>: open_pod_bay_doors
+project_slug <span class="o">[</span>open_pod_bay_doors<span class="o">]</span>: open_pod_bay_doors
+project_short_description <span class="o">[</span>Python Boilerplate contains all the boilerplate you need to create a Python package.<span class="o">]</span>: I am afraid I cant <span class="k">do</span> that
+pypi_username <span class="o">[</span>hal9000<span class="o">]</span>: hal9000
+version <span class="o">[</span><span class="m">0</span>.1.0<span class="o">]</span>:
+use_pytest <span class="o">[</span>n<span class="o">]</span>: y                         <span class="c1"># sets up project to be used with pytest, for unit testing.</span>
+use_black <span class="o">[</span>n<span class="o">]</span>: y                          <span class="c1"># for code formatting</span>
+use_pypi_deployment_with_travis <span class="o">[</span>y<span class="o">]</span>: n    <span class="c1"># I will be using GitHub actions for deployment.</span>
+add_pyup_badge <span class="o">[</span>n<span class="o">]</span>: n                     <span class="c1"># adds a badge in readme file</span>
+Select command_line_interface:
+<span class="m">1</span> - Click
+<span class="m">2</span> - Argparse
+<span class="m">3</span> - No command-line interface
+Choose from <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span> <span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="m">3</span>                <span class="c1"># no command line interface required</span>
+create_author_file <span class="o">[</span>y<span class="o">]</span>:
+Select open_source_license:
+<span class="m">1</span> - MIT license
+<span class="m">2</span> - BSD license
+<span class="m">3</span> - ISC license
+<span class="m">4</span> - Apache Software License <span class="m">2</span>.0
+<span class="m">5</span> - GNU General Public License v3
+<span class="m">6</span> - Not open <span class="nb">source</span>
+Choose from <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span> <span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="m">1</span>       <span class="c1"># keep it simple choose MIT</span>
+</pre></div>
+</div>
+<p>This creates a python project with the following directory structure.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>open_pod_bay_doors
+├── AUTHORS.rst
+├── CONTRIBUTING.rst
+├── HISTORY.rst
+├── LICENSE
+├── MANIFEST.in
+├── Makefile
+├── README.rst
+├── docs
+│   ├── Makefile
+│   ├── authors.rst
+│   ├── conf.py
+│   ├── contributing.rst
+│   ├── history.rst
+│   ├── index.rst
+│   ├── installation.rst
+│   ├── make.bat
+│   ├── readme.rst
+│   └── usage.rst
+├── open_pod_bay_doors
+│   ├── __init__.py
+│   └── open_pod_bay_doors.py
+├── requirements_dev.txt
+├── setup.cfg
+├── setup.py
+├── tests
+│   ├── __init__.py
+│   └── test_open_pod_bay_doors.py
+└── tox.ini
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>setup.cfg is improperly configured and throws the following warning
+when running pytest:</p>
+<p><cite>PytestConfigWarning: Unknown config option: collect_ignore</cite></p>
+<p>The following changes to the file are suggested ( - remove, + add)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">collect_ignore</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;setup.py&#39;</span><span class="p">]</span>
+<span class="o">+</span> <span class="n">addopts</span> <span class="o">=</span> <span class="o">--</span><span class="n">ignore</span><span class="o">=</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Replacing with <cite>addopts</cite> fixes the issue. See <a class="reference external" href="https://github.com/audreyfeldroy/cookiecutter-pypackage/issues/608">issue</a></p>
+</div>
+<div class="section" id="files-and-directories">
+<h4>Files and directories<a class="headerlink" href="#files-and-directories" title="Permalink to this headline">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>AUTHORS.rst</strong>: This file contains information regarding the maintainers and contributors of the project.</p></li>
+<li><p><strong>CONTRIBUTING.rst</strong>: This file contains information on how to contribute to the project.</p></li>
+<li><p><strong>HISTORY.rst</strong>: This file contains the version history information of the project.</p></li>
+<li><p><strong>LICENSE</strong>: License associated with the project.</p></li>
+<li><p><strong>MANIFEST.in</strong>: Specify files you want to add or remove in the source distribution.</p></li>
+<li><p><strong>Makefile</strong>: Used to automate different parts of development. More on Makefile later.</p></li>
+<li><p><strong>Readme.rst</strong>: File that introduces and explains the project. More on Readme file later.</p></li>
+<li><p><strong>docs</strong>: Source directory for Sphinx project. Contains the source and build files for the Documentation. More on Documentation later.</p></li>
+<li><p><strong>open_pod_bay_doors</strong> (main package): Contains all the source code.</p></li>
+<li><p><strong>requirements_dev.txt</strong>: Lists all the modules/packages required for development.</p></li>
+<li><p><strong>setup.cfg</strong>: Configuration file for various tools</p></li>
+<li><p><strong>setup.py</strong>: Contains information necessary for building and installing the package.</p></li>
+<li><p><strong>tests</strong>: Contains modules for testing the code. More on testing later.</p></li>
+<li><p><strong>tox.ini</strong>: Configuration file for tox. <cite>This file can be removed. I am not using tox for testing</cite></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -413,11 +610,11 @@ project on Windows Subsystem for Linux - Ubuntu so all the steps will correspond
       </div>
     </a>
     <a class="right-next"
-       href="../book/book.html"
+       href="makefile.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating this book</p>
+        <p class="prev-next-title">The Makefile</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -427,6 +624,33 @@ project on Windows Subsystem for Linux - Ubuntu so all the steps will correspond
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-conda">Setting up conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-conda-installer">Downloading conda installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-installer">Run the installer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-project-using-cookiecutter">Create project using <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cookiecutter-in-the-base-conda-environment">Install Cookiecutter in the base conda environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-from-the-template">Create a project from the template</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-and-directories">Files and directories</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

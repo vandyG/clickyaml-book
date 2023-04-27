@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steps &#8212; clickYaml</title>
+    <title>Installing Requirements &#8212; clickYaml</title>
   
   
   
@@ -59,9 +59,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/steps';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package/requirements';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating this book" href="../book/book.html" />
+    <link rel="prev" title="Setting up Version Control" href="git_setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,16 +154,16 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../package/overview.html">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../package/setup.html">Environment Setup</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../package/makefile.html">The Makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../package/git_setup.html">Setting up Version Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../package/requirements.html">Installing Requirements</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="setup.html">Environment Setup</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">The Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_setup.html">Setting up Version Control</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Installing Requirements</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="book.html">Creating this book</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up the book</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/book.html">Creating this book</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/setup.html">Setting up the book</a></li>
 </ul>
 </li>
 </ul>
@@ -235,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/vandyG/clickyaml-book/issues/new?title=Issue%20on%20page%20%2Fbook/steps.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/vandyG/clickyaml-book/issues/new?title=Issue%20on%20page%20%2Fpackage/requirements.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -265,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/book/steps.rst" target="_blank"
+      <li><a href="../_sources/package/requirements.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +347,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Steps</h1>
+    <h1>Installing Requirements</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -359,13 +361,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="steps">
-<h1>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h1>
-<ol class="arabic simple">
-<li><p>Install conda</p></li>
-<li><p>jupyter-book</p></li>
-<li><p>setup makefile</p></li>
-</ol>
+  <div class="section" id="installing-requirements">
+<h1>Installing Requirements<a class="headerlink" href="#installing-requirements" title="Permalink to this headline">#</a></h1>
+<p>Now the next step is to install the packages required for development. These packages may or may not be a
+dependency for our package. These requirements are used to define the complete python environment to
+facilitate the development of the project.</p>
+<p>The user does not require unit testing packages (like <code class="docutils literal notranslate"><span class="pre">pytest</span></code>) or packages used to create documentation (like <code class="docutils literal notranslate"><span class="pre">sphinx</span></code>) are not
+to run or use clickYaml. Rather developers and contributors need these packages to get started and contribute to the project.
+Hence these requirements are usually found in a file present in the project root called as <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. For
+conda based projects <code class="docutils literal notranslate"><span class="pre">environment.yaml</span></code> file is preferred. This was one of the many learnings I had while working on
+this project. I used <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file even though I was using a conda environment. <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file
+should be used if you are using pip + venv. Although pip and conda are not interoperable but it is acceptable to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>
+packages but it is recommended to install using conda as it keeps the environment more portable.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -381,7 +388,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book"
+            path: "./package"
         },
         predefinedOutput: true
     }
@@ -396,6 +403,24 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="git_setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setting up Version Control</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../book/book.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Creating this book</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

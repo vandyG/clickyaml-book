@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steps &#8212; clickYaml</title>
+    <title>Setting up Version Control &#8212; clickYaml</title>
   
   
   
@@ -59,9 +59,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/steps';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package/git_setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installing Requirements" href="requirements.html" />
+    <link rel="prev" title="The Makefile" href="makefile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,16 +154,16 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../package/overview.html">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../package/setup.html">Environment Setup</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../package/makefile.html">The Makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../package/git_setup.html">Setting up Version Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../package/requirements.html">Installing Requirements</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="setup.html">Environment Setup</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">The Makefile</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Setting up Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Installing Requirements</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="book.html">Creating this book</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up the book</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book/book.html">Creating this book</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/setup.html">Setting up the book</a></li>
 </ul>
 </li>
 </ul>
@@ -235,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/vandyG/clickyaml-book/issues/new?title=Issue%20on%20page%20%2Fbook/steps.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/vandyG/clickyaml-book/issues/new?title=Issue%20on%20page%20%2Fpackage/git_setup.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -265,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/book/steps.rst" target="_blank"
+      <li><a href="../_sources/package/git_setup.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +336,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -345,11 +349,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Steps</h1>
+    <h1>Setting up Version Control</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-github-repo">Setting up GitHub Repo</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -359,13 +372,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="steps">
-<h1>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h1>
-<ol class="arabic simple">
-<li><p>Install conda</p></li>
-<li><p>jupyter-book</p></li>
-<li><p>setup makefile</p></li>
-</ol>
+  <div class="section" id="setting-up-version-control">
+<h1>Setting up Version Control<a class="headerlink" href="#setting-up-version-control" title="Permalink to this headline">#</a></h1>
+<p>Now that we have our project set up we are ready to begin with the real work. But first
+we need to set up git and GitHub. I can’t emphasize enough on how essential version control is.
+On numerous occasions I’ve run into situation where I had to revert back the changes made to
+the code, and git made my life much easier. Collaborating with other developers is also an
+area where git proves to be useful.</p>
+<p>And then there is GitHub which has a bunch of useful features apart from just being a place to
+host your repository. All the GitHub features that I leveraged while working on this project
+will be discussed in details. From GitHub actions to GitHub CLI to GitHub pages most
+of it will be discussed.</p>
+<div class="section" id="setting-up-git">
+<h2>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">#</a></h2>
+<p>If you don’t have git installed already, enter the following command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt install git-all
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For installation instructions for other operating system please refer to official documentation.
+<a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Installing Git</a></p>
+</div>
+<p>Now navigate to the project repository and initialize git and make your first commit.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git init
+git add .
+git commit -m <span class="s2">&quot;initialize git repo&quot;</span>
+</pre></div>
+</div>
+<p>Set git email and user-name.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git config user.name <span class="s2">&quot;hal9000&quot;</span>
+git config user.email <span class="s2">&quot;hal9000@discovery.one&quot;</span>
+</pre></div>
+</div>
+<p>Now we have a local git repository, all we now need is to host this repository on GitHub. If you notice
+there will be a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> which defines all the files that are supposed to be ignored by
+version control. Files like the build files, documentation files are not required to be watched by the
+version control system.</p>
+</div>
+<div class="section" id="setting-up-github-repo">
+<h2>Setting up GitHub Repo<a class="headerlink" href="#setting-up-github-repo" title="Permalink to this headline">#</a></h2>
+<p>The traditional way will be to create a new repository on GitHub will be to either use GitHub Desktop
+or from <a class="reference external" href="github.com">github.com</a>. But we are command line junkies and we prefer to use GitHub CLI.</p>
+<p>To install GitHub CLI <code class="docutils literal notranslate"><span class="pre">gh</span></code> run the following command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> -p curl &gt;/dev/null <span class="o">||</span> <span class="o">(</span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install curl -y<span class="o">)</span>
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/usr/share/keyrings/githubcli-archive-keyring.gpg <span class="se">\</span>
+<span class="o">&amp;&amp;</span> sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/github-cli.list &gt; /dev/null <span class="se">\</span>
+<span class="o">&amp;&amp;</span> sudo apt update <span class="se">\</span>
+<span class="o">&amp;&amp;</span> sudo apt install gh -y
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For installation instructions on other operating systems follow this <a class="reference external" href="https://cli.github.com/manual/installation">link</a>.</p>
+</div>
+<p>To create a new repo run the <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">repo</span> <span class="pre">create</span></code> interactive command. And answer the prompts accordingly.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>❯ gh repo create
+? What would you like to <span class="k">do</span>? Push an existing <span class="nb">local</span> repository to GitHub
+? Path to <span class="nb">local</span> repository .
+? Repository name open_pod_bay_doors
+? Description I am afraid I cant <span class="k">do</span> that
+? Visibility Public
+✓ Created repository vandyG/open_pod_bay_doors on GitHub
+? Add a remote? Yes
+? What should the new remote be called? origin
+✓ Added remote https://github.com/vandyG/open_pod_bay_doors.git
+? Would you like to push commits from the current branch to <span class="s2">&quot;origin&quot;</span>? Yes
+</pre></div>
+</div>
+<p>Now we are ready to push the changes to remote.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -381,7 +458,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book"
+            path: "./package"
         },
         predefinedOutput: true
     }
@@ -396,12 +473,45 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="makefile.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Makefile</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="requirements.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Installing Requirements</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-github-repo">Setting up GitHub Repo</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
