@@ -12,7 +12,7 @@ Here is a list of tools that were used while working on this project:
 
 ================    ======================
 Operating System    |Win| + |Ubu|
-Text Editor         |Vscode|
+Code Editor         |Vscode|
 Package Manager     |Conda|
 Version Control     |Git| + |Github|
 Documentation       |Rtd| + |Sphinx|
@@ -45,6 +45,8 @@ Downloading conda installer
 
 
 You can also download it manually from the same link.
+
+.. _install-conda:
 
 Run the installer
 ^^^^^^^^^^^^^^^^^
