@@ -197,56 +197,56 @@ Files and directories
 
 
 .. |Win| image:: data/win.svg
-   :width: 5%
+   :width: 7%
    :alt: Windows
    :target: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10
 
 .. |Ubu| image:: data/ubu.svg
-   :width: 5%
+   :width: 7%
    :alt: WSL-Ubuntu
    :target: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10
 
 .. |Vscode| image:: data/vscode.png
-   :width: 5%
+   :width: 7%
    :alt: Visual Studio Code
    :target: https://code.visualstudio.com/download
 
 .. |Conda| image:: data/conda.png
-   :width: 5%
+   :width: 7%
    :alt: Conda
    :target: https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 
 .. |Git| image:: data/git.png
-   :width: 5%
+   :width: 7%
    :alt: Git
    :target: https://git-scm.com/download/linux
 
 .. |Github| image:: data/github.png
-   :width: 5%
+   :width: 7%
    :alt: GitHub
    :target: https://github.com/
 
 .. |Rtd| image:: data/rtd.png
-   :width: 5%
+   :width: 7%
    :alt: Read The Docs
    :target: https://docs.readthedocs.io/en/stable/tutorial/index.html
 
 .. |Sphinx| image:: data/sphinx.png
-   :width: 5%
+   :width: 7%
    :alt: Sphinx
    :target: https://www.sphinx-doc.org/en/master/
 
 .. |Pypi| image:: data/pypi.png
-   :width: 5%
+   :width: 7%
    :alt: PyPi
    :target: https://pypi.org/
 
 .. |Pytest| image:: data/pytest.png
-   :width: 5%
+   :width: 7%
    :alt: PyTest
    :target: https://docs.pytest.org/en/7.2.x/
 
 .. |Gaction| image:: data/gaction.png
-   :width: 5%
+   :width: 7%
    :alt: Github Actions
    :target: https://github.com/features/actions
