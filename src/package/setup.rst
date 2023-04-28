@@ -46,6 +46,8 @@ Downloading conda installer
 
 You can also download it manually from the same link.
 
+.. _install-conda:
+
 Run the installer
 ^^^^^^^^^^^^^^^^^
 
