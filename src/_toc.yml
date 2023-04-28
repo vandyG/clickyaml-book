@@ -8,8 +8,8 @@ chapters:
   - file: package/setup
     sections:
     - file: package/makefile
-    - file: package/git_setup
     - file: package/requirements
+    - file: package/git_setup
   - file: book/book
     sections:
     - file: book/setup
