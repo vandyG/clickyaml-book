@@ -188,10 +188,6 @@ Files and directories
 13. **tests**: Contains modules for testing the code. More on testing later.
 14. **tox.ini**: Configuration file for tox. `This file can be removed. I am not using tox for testing`
 
-.. #TODO: Git setup
-.. #TODO: Gh setup
-.. #TODO: Github repo setup
-.. #TODO: Describe makefile
 .. #TODO: Explain rst format
 .. #TODO: write readme file
 .. #TODO: how to write documentation
