@@ -1,6 +1,7 @@
-# clickYaml
+# [clickYaml](https://vandyg.github.io/clickyaml-book/)
 
 A book that describes the journey to build an end-to-end python project.
+Click [here](https://vandyg.github.io/clickyaml-book/)
 
 ## Usage
 
